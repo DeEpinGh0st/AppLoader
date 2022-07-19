@@ -110,7 +110,7 @@ namespace AppLoader
                 Process process = new Process();
                 process.StartInfo.RedirectStandardError = true;
                 process.StartInfo.UseShellExecute = false;
-                process.StartInfo.FileName = values["loader"];
+                process.StartInfo.FileName = values["loader"].Replace("%mp%",appPath);
                 process.StartInfo.Arguments = " " + values["arg"] + " " + values["app"];
                 process.StartInfo.WorkingDirectory = Path.GetDirectoryName(values["app"]);
                 if (Convert.ToBoolean(values["hidden"]))
@@ -137,10 +137,20 @@ namespace AppLoader
                 MessageBox.Show("参数不完整!");
                 return;
             }
-            OperateIniFile.WriteIniData("setting", "loader", JavatextBox.Text);
+            string loaderBinPath, appBinPath;
+            loaderBinPath = JavatextBox.Text;
+            appBinPath = ApptextBox.Text;
+            if (ToolKitcheckBox.Checked) {
+                string appRelativePath;
+                appRelativePath = loaderBinPath.Substring(loaderBinPath.LastIndexOf("environment"));
+                loaderBinPath = "%mp%\\..\\..\\" + appRelativePath;
+                appBinPath = appBinPath.Replace(appPath+"\\", "");
+            }
+            OperateIniFile.WriteIniData("setting", "loader", "\"" + loaderBinPath + "\"");
             OperateIniFile.WriteIniData("setting", "arg", ArgtextBox.Text);
-            OperateIniFile.WriteIniData("setting", "app", ApptextBox.Text);
+            OperateIniFile.WriteIniData("setting", "app", "\"" + appBinPath + "\"");
             OperateIniFile.WriteIniData("setting", "hidden", HiddencheckBox.Checked.ToString());
+            OperateIniFile.WriteIniData("setting", "toolkit", ToolKitcheckBox.Checked.ToString());
             MessageBox.Show("保存成功");
         }
     }

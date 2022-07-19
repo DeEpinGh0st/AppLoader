@@ -43,11 +43,15 @@
             this.SaveBtn = new System.Windows.Forms.Button();
             this.LaunchBtn = new System.Windows.Forms.Button();
             this.FileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ToolKitcheckBox = new System.Windows.Forms.CheckBox();
             this.SettinggroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // SettinggroupBox
             // 
+            this.SettinggroupBox.Controls.Add(this.ToolKitcheckBox);
+            this.SettinggroupBox.Controls.Add(this.label4);
             this.SettinggroupBox.Controls.Add(this.AppBroBtn);
             this.SettinggroupBox.Controls.Add(this.JavaBroBtn);
             this.SettinggroupBox.Controls.Add(this.HiddencheckBox);
@@ -178,6 +182,26 @@
             // 
             this.FileDialog.Filter = "应用程序|*.exe|Jar程序|*.jar";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(110, 159);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 12);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "工具包模式: ";
+            // 
+            // ToolKitcheckBox
+            // 
+            this.ToolKitcheckBox.AutoSize = true;
+            this.ToolKitcheckBox.ForeColor = System.Drawing.Color.Red;
+            this.ToolKitcheckBox.Location = new System.Drawing.Point(185, 152);
+            this.ToolKitcheckBox.Name = "ToolKitcheckBox";
+            this.ToolKitcheckBox.Size = new System.Drawing.Size(192, 28);
+            this.ToolKitcheckBox.TabIndex = 10;
+            this.ToolKitcheckBox.Text = "注意: 该选项只针对作者使用的\r\n工具包有效";
+            this.ToolKitcheckBox.UseVisualStyleBackColor = true;
+            // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -216,6 +240,8 @@
         private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Button LaunchBtn;
         private System.Windows.Forms.OpenFileDialog FileDialog;
+        private System.Windows.Forms.CheckBox ToolKitcheckBox;
+        private System.Windows.Forms.Label label4;
     }
 }
 
