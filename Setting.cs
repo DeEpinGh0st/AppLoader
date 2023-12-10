@@ -19,6 +19,30 @@ namespace AppLoader
         {
             try
             {
+                if (File.Exists(configPath))
+                {
+                    OperateIniFile.SetFilePath(configPath);
+                    DialogResult dialogResult =  MessageBox.Show("已存在配置文件,启动(Y)或修改(N)", "提示",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.No)
+                    {
+                        JavatextBox.Text = OperateIniFile.ReadIniData("setting", "loader","");
+                        ArgtextBox.Text = OperateIniFile.ReadIniData("setting", "arg", "");
+                        ApptextBox.Text = OperateIniFile.ReadIniData("setting", "app", "");
+                        bool hidden = Convert.ToBoolean(OperateIniFile.ReadIniData("setting", "hidden", ""));
+                        if (hidden)
+                        {
+                            HiddencheckBox.Checked = true;
+                        }
+                        bool toolkit = Convert.ToBoolean(OperateIniFile.ReadIniData("setting", "toolkit", ""));
+                        if (toolkit)
+                        {
+                            ToolKitcheckBox.Checked = true;
+                        }
+                        this.Text += " Version: " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                        this.Show();
+                        return;
+                    }
+                }
                 this.Text += " Version: " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
                 OperateIniFile.SetFilePath(configPath);
                 runApp();
@@ -140,11 +164,12 @@ namespace AppLoader
             string loaderBinPath, appBinPath;
             loaderBinPath = JavatextBox.Text;
             appBinPath = ApptextBox.Text;
-            if (ToolKitcheckBox.Checked) {
+            if (ToolKitcheckBox.Checked)
+            {
                 string appRelativePath;
                 appRelativePath = loaderBinPath.Substring(loaderBinPath.LastIndexOf("environment"));
                 loaderBinPath = "%mp%\\..\\..\\" + appRelativePath;
-                appBinPath = appBinPath.Replace(appPath+"\\", "");
+                appBinPath = appBinPath.Replace(appPath + "\\", "");
             }
             OperateIniFile.WriteIniData("setting", "loader", "\"" + loaderBinPath + "\"");
             OperateIniFile.WriteIniData("setting", "arg", ArgtextBox.Text);
@@ -152,6 +177,69 @@ namespace AppLoader
             OperateIniFile.WriteIniData("setting", "hidden", HiddencheckBox.Checked.ToString());
             OperateIniFile.WriteIniData("setting", "toolkit", ToolKitcheckBox.Checked.ToString());
             MessageBox.Show("保存成功");
+        }
+
+        private void SelectJdk_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            JavatextBox.Text = string.Empty;
+            if (SelectJdk_comboBox.SelectedIndex!=2)
+            {
+                JavatextBox.ReadOnly = true;
+                JavaBroBtn.Enabled = false;
+            }
+            switch (SelectJdk_comboBox.SelectedIndex)
+            {
+                case 0:
+                    JavatextBox.Text = @"%mp%\..\..\environment\jdk8\bin\java.exe";
+                    break;
+                case 1:
+                    JavatextBox.Text = @"%mp%\..\..\environment\jdk11\bin\java.exe";
+                    break;
+                case 2:
+                    JavatextBox.ReadOnly = false;
+                    if (!JavaBroBtn.Enabled)
+                    {
+                        JavaBroBtn.Enabled = true;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void Arg_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ArgtextBox.Text = string.Empty;
+            if (Arg_comboBox.SelectedIndex != 3)
+            {
+                ArgtextBox.ReadOnly = true;
+            }
+            switch (Arg_comboBox.SelectedIndex)
+            {
+                case 0:
+                    ArgtextBox.Text = @"-jar";
+                    break;
+                case 1:
+                    ArgtextBox.Text = @"-Dfile.encoding=utf-8 -jar";
+                    break;
+                case 2:
+                    ArgtextBox.Text = @"-Dfile.encoding=utf-8 -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -jar";
+                    break;
+                case 3:
+                    ArgtextBox.ReadOnly = false;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void isToolkit_label_MouseHover(object sender, EventArgs e)
+        {
+            string tip = @"如果你是在作者提供的工具包内使用此程序,请勾选此选项";
+            ToolTip toolTip = new ToolTip();
+            toolTip.ToolTipTitle = "注意";
+            toolTip.IsBalloon = true;
+            toolTip.SetToolTip(this.isToolkit_label,tip);
         }
     }
 }
