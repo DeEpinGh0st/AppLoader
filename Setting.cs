@@ -38,12 +38,12 @@ namespace AppLoader
                         {
                             ToolKitcheckBox.Checked = true;
                         }
-                        this.Text += " Version: " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                        //this.Text += " Version: " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
                         this.Show();
                         return;
                     }
                 }
-                this.Text += " Version: " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                //this.Text += " Version: " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
                 OperateIniFile.SetFilePath(configPath);
                 runApp();
             }
@@ -139,7 +139,7 @@ namespace AppLoader
                 process.StartInfo.WorkingDirectory = Path.GetDirectoryName(values["app"]);
                 if (Convert.ToBoolean(values["hidden"]))
                 {
-                    process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                    //process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
                     process.StartInfo.CreateNoWindow = true;
                 }
                 process.Start();
@@ -182,7 +182,7 @@ namespace AppLoader
         private void SelectJdk_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             JavatextBox.Text = string.Empty;
-            if (SelectJdk_comboBox.SelectedIndex!=2)
+            if (SelectJdk_comboBox.SelectedIndex!=3)
             {
                 JavatextBox.ReadOnly = true;
                 JavaBroBtn.Enabled = false;
@@ -196,6 +196,9 @@ namespace AppLoader
                     JavatextBox.Text = @"%mp%\..\..\environment\jdk11\bin\java.exe";
                     break;
                 case 2:
+                    JavatextBox.Text = @"%mp%\..\..\environment\jdk17\bin\java.exe";
+                    break;
+                case 3:
                     JavatextBox.ReadOnly = false;
                     if (!JavaBroBtn.Enabled)
                     {
@@ -223,9 +226,13 @@ namespace AppLoader
                     ArgtextBox.Text = @"-Dfile.encoding=utf-8 -jar";
                     break;
                 case 2:
-                    ArgtextBox.Text = @"-Dfile.encoding=utf-8 -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -jar";
+                    ArgtextBox.ReadOnly = false;
+                    ArgtextBox.Text = @"-javaagent:  -jar";
                     break;
                 case 3:
+                    ArgtextBox.Text = @"-Dfile.encoding=utf-8 -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -jar";
+                    break;
+                case 4:
                     ArgtextBox.ReadOnly = false;
                     break;
                 default:

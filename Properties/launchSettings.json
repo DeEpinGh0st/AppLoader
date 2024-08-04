@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AppLoader": {
+      "commandName": "Project",
+      "commandLineArgs": "E:\\\\1.ini"
+    }
+  }
+}
