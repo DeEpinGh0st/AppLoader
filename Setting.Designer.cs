@@ -83,7 +83,7 @@
             // 
             isToolkit_label.AutoSize = true;
             isToolkit_label.ForeColor = System.Drawing.Color.Red;
-            isToolkit_label.Location = new System.Drawing.Point(232, 336);
+            isToolkit_label.Location = new System.Drawing.Point(232, 346);
             isToolkit_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             isToolkit_label.Name = "isToolkit_label";
             isToolkit_label.Size = new System.Drawing.Size(75, 17);
@@ -94,7 +94,7 @@
             // ToolKitcheckBox
             // 
             ToolKitcheckBox.AutoSize = true;
-            ToolKitcheckBox.Location = new System.Drawing.Point(317, 339);
+            ToolKitcheckBox.Location = new System.Drawing.Point(317, 349);
             ToolKitcheckBox.Margin = new System.Windows.Forms.Padding(4);
             ToolKitcheckBox.Name = "ToolKitcheckBox";
             ToolKitcheckBox.Size = new System.Drawing.Size(15, 14);
@@ -106,10 +106,10 @@
             Arg_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             Arg_comboBox.FormattingEnabled = true;
             Arg_comboBox.Items.AddRange(new object[] { "启动jar文件", "启动jar文件(UTF-8)", "启动带javagent的jar文件", "启动CobaltStrike", "自定义" });
-            Arg_comboBox.Location = new System.Drawing.Point(78, 133);
+            Arg_comboBox.Location = new System.Drawing.Point(78, 116);
             Arg_comboBox.Margin = new System.Windows.Forms.Padding(4);
             Arg_comboBox.Name = "Arg_comboBox";
-            Arg_comboBox.Size = new System.Drawing.Size(292, 25);
+            Arg_comboBox.Size = new System.Drawing.Size(350, 25);
             Arg_comboBox.TabIndex = 12;
             Arg_comboBox.SelectedIndexChanged += Arg_comboBox_SelectedIndexChanged;
             // 
@@ -126,7 +126,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(2, 84);
+            label5.Location = new System.Drawing.Point(2, 78);
             label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(75, 17);
@@ -137,7 +137,7 @@
             // 
             SelectJdk_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             SelectJdk_comboBox.FormattingEnabled = true;
-            SelectJdk_comboBox.Items.AddRange(new object[] { "ToolKit-JDK8", "ToolKit-JDK11", "ToolKit-JDK17", "自定义" });
+            SelectJdk_comboBox.Items.AddRange(new object[] { "ToolKit-JRE17-Openjfx", "自定义" });
             SelectJdk_comboBox.Location = new System.Drawing.Point(78, 30);
             SelectJdk_comboBox.Margin = new System.Windows.Forms.Padding(4);
             SelectJdk_comboBox.Name = "SelectJdk_comboBox";
@@ -147,7 +147,7 @@
             // 
             // AppBroBtn
             // 
-            AppBroBtn.Location = new System.Drawing.Point(378, 273);
+            AppBroBtn.Location = new System.Drawing.Point(378, 296);
             AppBroBtn.Margin = new System.Windows.Forms.Padding(4);
             AppBroBtn.Name = "AppBroBtn";
             AppBroBtn.Size = new System.Drawing.Size(49, 33);
@@ -171,7 +171,7 @@
             // HiddencheckBox
             // 
             HiddencheckBox.AutoSize = true;
-            HiddencheckBox.Location = new System.Drawing.Point(168, 338);
+            HiddencheckBox.Location = new System.Drawing.Point(168, 348);
             HiddencheckBox.Margin = new System.Windows.Forms.Padding(4);
             HiddencheckBox.Name = "HiddencheckBox";
             HiddencheckBox.Size = new System.Drawing.Size(15, 14);
@@ -180,7 +180,7 @@
             // 
             // ApptextBox
             // 
-            ApptextBox.Location = new System.Drawing.Point(78, 278);
+            ApptextBox.Location = new System.Drawing.Point(78, 301);
             ApptextBox.Margin = new System.Windows.Forms.Padding(4);
             ApptextBox.Name = "ApptextBox";
             ApptextBox.Size = new System.Drawing.Size(292, 23);
@@ -188,17 +188,17 @@
             // 
             // ArgtextBox
             // 
-            ArgtextBox.Location = new System.Drawing.Point(78, 184);
+            ArgtextBox.Location = new System.Drawing.Point(78, 157);
             ArgtextBox.Margin = new System.Windows.Forms.Padding(4);
             ArgtextBox.Multiline = true;
             ArgtextBox.Name = "ArgtextBox";
-            ArgtextBox.ReadOnly = true;
-            ArgtextBox.Size = new System.Drawing.Size(292, 69);
+            ArgtextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            ArgtextBox.Size = new System.Drawing.Size(350, 128);
             ArgtextBox.TabIndex = 5;
             // 
             // JavatextBox
             // 
-            JavatextBox.Location = new System.Drawing.Point(78, 81);
+            JavatextBox.Location = new System.Drawing.Point(78, 75);
             JavatextBox.Margin = new System.Windows.Forms.Padding(4);
             JavatextBox.Name = "JavatextBox";
             JavatextBox.ReadOnly = true;
@@ -208,7 +208,7 @@
             // Hiddenlabel
             // 
             Hiddenlabel.AutoSize = true;
-            Hiddenlabel.Location = new System.Drawing.Point(97, 336);
+            Hiddenlabel.Location = new System.Drawing.Point(97, 346);
             Hiddenlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             Hiddenlabel.Name = "Hiddenlabel";
             Hiddenlabel.Size = new System.Drawing.Size(63, 17);
@@ -218,7 +218,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(12, 281);
+            label3.Location = new System.Drawing.Point(12, 304);
             label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(63, 17);
@@ -228,7 +228,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(12, 137);
+            label2.Location = new System.Drawing.Point(12, 120);
             label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(63, 17);
@@ -283,10 +283,10 @@
             Margin = new System.Windows.Forms.Padding(4);
             MaximizeBox = false;
             MaximumSize = new System.Drawing.Size(507, 541);
-            MinimumSize = new System.Drawing.Size(507, 424);
+            MinimumSize = new System.Drawing.Size(507, 541);
             Name = "Setting";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "启动参数设置 2024.8.4 .Net 8";
+            Text = "启动参数设置 2025.02.17 .Net 8";
             Load += Setting_Load;
             SettinggroupBox.ResumeLayout(false);
             SettinggroupBox.PerformLayout();

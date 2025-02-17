@@ -182,23 +182,23 @@ namespace AppLoader
         private void SelectJdk_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             JavatextBox.Text = string.Empty;
-            if (SelectJdk_comboBox.SelectedIndex!=3)
+            if (SelectJdk_comboBox.SelectedIndex!=1)
             {
                 JavatextBox.ReadOnly = true;
                 JavaBroBtn.Enabled = false;
             }
             switch (SelectJdk_comboBox.SelectedIndex)
             {
-                case 0:
+                /*case 0:
                     JavatextBox.Text = @"%mp%\..\..\environment\jdk8\bin\java.exe";
                     break;
                 case 1:
                     JavatextBox.Text = @"%mp%\..\..\environment\jdk11\bin\java.exe";
+                    break;*/
+                case 0:
+                    JavatextBox.Text = @"%mp%\..\..\environment\jre17\bin\java.exe";
                     break;
-                case 2:
-                    JavatextBox.Text = @"%mp%\..\..\environment\jdk17\bin\java.exe";
-                    break;
-                case 3:
+                case 1:
                     JavatextBox.ReadOnly = false;
                     if (!JavaBroBtn.Enabled)
                     {
@@ -212,11 +212,11 @@ namespace AppLoader
 
         private void Arg_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ArgtextBox.Text = string.Empty;
-            if (Arg_comboBox.SelectedIndex != 3)
+            //ArgtextBox.Text = string.Empty;
+            /*if (Arg_comboBox.SelectedIndex != 3)
             {
                 ArgtextBox.ReadOnly = true;
-            }
+            }*/
             switch (Arg_comboBox.SelectedIndex)
             {
                 case 0:
