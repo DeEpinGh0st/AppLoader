@@ -137,7 +137,7 @@
             // 
             SelectJdk_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             SelectJdk_comboBox.FormattingEnabled = true;
-            SelectJdk_comboBox.Items.AddRange(new object[] { "ToolKit-JRE17-Openjfx", "自定义" });
+            SelectJdk_comboBox.Items.AddRange(new object[] { "ToolKit-JRE8", "ToolKit-JRE17-Openjfx", "自定义" });
             SelectJdk_comboBox.Location = new System.Drawing.Point(78, 30);
             SelectJdk_comboBox.Margin = new System.Windows.Forms.Padding(4);
             SelectJdk_comboBox.Name = "SelectJdk_comboBox";
@@ -286,7 +286,7 @@
             MinimumSize = new System.Drawing.Size(507, 541);
             Name = "Setting";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "启动参数设置 2025.02.17 .Net 8";
+            Text = "启动参数设置 2025.02.23 .Net 8";
             Load += Setting_Load;
             SettinggroupBox.ResumeLayout(false);
             SettinggroupBox.PerformLayout();
