@@ -137,7 +137,7 @@
             // 
             SelectJdk_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             SelectJdk_comboBox.FormattingEnabled = true;
-            SelectJdk_comboBox.Items.AddRange(new object[] { "ToolKit-JRE8", "ToolKit-JRE17-Openjfx", "自定义" });
+            SelectJdk_comboBox.Items.AddRange(new object[] { "ToolKit-JRE8", "ToolKit-JRE23-Openjfx", "自定义" });
             SelectJdk_comboBox.Location = new System.Drawing.Point(78, 30);
             SelectJdk_comboBox.Margin = new System.Windows.Forms.Padding(4);
             SelectJdk_comboBox.Name = "SelectJdk_comboBox";

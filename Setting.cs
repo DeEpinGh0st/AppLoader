@@ -199,7 +199,7 @@ namespace AppLoader
                     JavatextBox.Text = @"%mp%\..\..\environment\JRE8\bin\java.exe";
                     break;
                 case 1:
-                    JavatextBox.Text = @"%mp%\..\..\environment\JRE17\bin\java.exe";
+                    JavatextBox.Text = @"%mp%\..\..\environment\JRE23\bin\java.exe";
                     break;
                 case 2:
                     JavatextBox.ReadOnly = false;
